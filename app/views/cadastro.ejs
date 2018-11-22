@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <h1>Cadastro</h1>
+
+    <% if(validacao.length > 0) { %>
+        <ul>
+            <% for(let item of validacao) { %>
+                <li><%= item.msg %></li>
+            <% } %>
+        </ul>
+    <% } %>
+
+    <form action="/cadastro/gravar" method="POST">
+        <label for="nome">Nome</label>
+        <input id="nome" value="<%= dados.nome %>" name="nome" type="text" placeholder="digite seu nome" />
+
+        <label for="email">Email</label>
+        <input id="email" value="<%= dados.email %>" name="email" type="email" placeholder="digite seu email" />
+
+        <input type="submit" value="gravar" />
+    </form>
+</body>
+
+</html>
